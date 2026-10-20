@@ -1,0 +1,9 @@
+{
+  "name": "Projeto Casamento",
+  "short_name": "Casamento",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#fff7f0",
+  "theme_color": "#8b3d4d",
+  "description": "Aplicativo para organizar lembretes, fornecedores, orcamentos, equipe, convidados e detalhes do casamento."
+}
