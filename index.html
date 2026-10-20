@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#8b3d4d" />
+    <title>Projeto Casamento</title>
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="phone-app">
+      <section class="top-panel">
+        <div>
+          <p class="kicker">Projeto Casamento</p>
+          <h1>Cada detalhe mais perto do seu SIM.</h1>
+        </div>
+        <div class="countdown">
+          <label for="weddingDate">Data</label>
+          <input id="weddingDate" type="date" />
+          <strong id="daysLeft">--</strong>
+          <span>dias para o casamento</span>
+        </div>
+      </section>
+
+      <section class="motivation" aria-label="Mensagem motivacional do dia">
+        <div class="motivation-head">
+          <span>Mensagem do dia</span>
+        </div>
+        <p id="dailyMessage"></p>
+      </section>
+
+      <section class="xp-card" aria-label="Sistema de conquistas">
+        <div>
+          <span id="rankName">Noiva E-rank</span>
+          <strong><b id="xpValue">0</b> XP</strong>
+        </div>
+        <div class="xp-track"><span id="xpBar"></span></div>
+        <small id="xpHint"></small>
+      </section>
+
+      <section class="reminders-panel" data-view="lembretes">
+        <div class="section-head">
+          <h2>Lembretes</h2>
+          <button class="add-row" data-list="lembretes" type="button">+ Lembrete</button>
+        </div>
+        <div class="list-area" data-list-area="lembretes"></div>
+      </section>
+
+      <section class="stages-panel" data-view="etapas">
+        <div class="section-head">
+          <h2>Etapas</h2>
+          <button id="addPhase" type="button">+ Etapa</button>
+        </div>
+        <div id="board" class="board"></div>
+      </section>
+
+      <nav class="tabs" id="tabs" aria-label="Abas do aplicativo"></nav>
+
+      <section class="tab-view budget-view" data-view="orcamentos">
+        <div class="section-head">
+          <h2>Orcamentos</h2>
+          <button class="add-row" data-list="orcamentos" type="button">+ Item</button>
+        </div>
+        <div class="budget-total">Total: <strong id="budgetTotal">R$ 0,00</strong></div>
+        <div class="list-area" data-list-area="orcamentos"></div>
+      </section>
+
+      <section class="tab-view guests-view" data-view="convidados">
+        <div class="section-head">
+          <h2>Convidados</h2>
+          <button class="add-row" data-list="convidados" type="button">+ Convidado</button>
+        </div>
+        <div class="list-area" data-list-area="convidados"></div>
+      </section>
+
+      <section class="tab-view team-view" data-view="equipe">
+        <div class="section-head">
+          <h2>Equipe</h2>
+          <button class="add-row" data-list="equipe" type="button">+ Pessoa</button>
+        </div>
+        <div class="list-area" data-list-area="equipe"></div>
+      </section>
+
+      <section class="tab-view menu-view" data-view="cardapio">
+        <div class="section-head">
+          <h2>Cardapio</h2>
+          <button class="add-row" data-list="cardapio" type="button">+ Prato</button>
+        </div>
+        <div class="list-area" data-list-area="cardapio"></div>
+      </section>
+
+      <section class="tab-view schedule-view" data-view="cronograma">
+        <div class="section-head">
+          <h2>Cronograma da festa</h2>
+          <button class="add-row" data-list="cronograma" type="button">+ Horario</button>
+        </div>
+        <div class="list-area" data-list-area="cronograma"></div>
+      </section>
+
+      <section class="tab-view vendors-view" data-view="fornecedores">
+        <div class="section-head">
+          <h2>Fornecedores</h2>
+          <button class="add-row" data-list="fornecedores" type="button">+ Fornecedor</button>
+        </div>
+        <div class="list-area" data-list-area="fornecedores"></div>
+      </section>
+
+      <section class="tab-view songs-view" data-view="musicas">
+        <div class="section-head">
+          <h2>Musicas</h2>
+          <button class="add-row" data-list="musicas" type="button">+ Musica</button>
+        </div>
+        <div class="list-area" data-list-area="musicas"></div>
+      </section>
+
+      <section class="tab-view civil-view" data-view="civil">
+        <div class="section-head">
+          <h2>Civil</h2>
+          <button class="add-row" data-list="civil" type="button">+ Organizacao</button>
+        </div>
+        <div class="list-area" data-list-area="civil"></div>
+      </section>
+
+      <section class="photos">
+        <div class="section-head">
+          <h2>Fotos</h2>
+          <label for="photoInput">Adicionar</label>
+        </div>
+        <input id="photoInput" type="file" accept="image/*" multiple />
+        <div id="gallery" class="gallery"></div>
+      </section>
+
+      <section class="partners">
+        <nav class="partner-tabs" id="partnerTabs" aria-label="Abas do casal">
+          <button class="partner-tab active" data-partner-tab="noivo" type="button">Noivo</button>
+          <button class="partner-tab" data-partner-tab="noiva" type="button">Noiva</button>
+        </nav>
+
+        <section class="partner-view active groom-view" data-partner-view="noivo">
+          <div class="section-head">
+            <h2>Noivo</h2>
+            <button class="add-row" data-list="noivo" type="button">+ Organizacao</button>
+          </div>
+          <div class="list-area" data-list-area="noivo"></div>
+        </section>
+
+        <section class="partner-view bride-view" data-partner-view="noiva">
+          <div class="section-head">
+            <h2>Noiva</h2>
+            <button class="add-row" data-list="noiva" type="button">+ Organizacao</button>
+          </div>
+          <div class="list-area" data-list-area="noiva"></div>
+        </section>
+      </section>
+    </main>
+
+    <button class="crisis-fab" id="crisisOpen" type="button">Modo crise</button>
+
+    <aside class="crisis-panel" id="crisisPanel" aria-label="Modo crise" aria-hidden="true">
+      <div class="crisis-card">
+        <header>
+          <div>
+            <span>Assistente de calma</span>
+            <h2>Modo crise</h2>
+          </div>
+          <button id="crisisClose" type="button">x</button>
+        </header>
+        <div class="crisis-chat" id="crisisChat">
+          <div class="crisis-message assistant">
+            Me conte o que deu errado. Eu vou te ajudar a separar urgencia, proximo passo e melhor forma de resolver.
+          </div>
+        </div>
+        <form class="crisis-form" id="crisisForm">
+          <input id="crisisInput" type="text" placeholder="Ex: o fornecedor cancelou..." />
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
+    </aside>
+
+    <template id="phaseTemplate">
+      <article class="phase">
+        <header>
+          <button class="phase-check" type="button">✓</button>
+          <input class="phase-title" aria-label="Nome da etapa" />
+          <button class="delete phase-delete" type="button">x</button>
+        </header>
+        <p class="progress-text"></p>
+        <div class="progress"><span></span></div>
+        <ul class="tasks"></ul>
+        <form class="task-form">
+          <input type="text" placeholder="Nova tarefa..." />
+          <button type="submit">Adicionar</button>
+        </form>
+      </article>
+    </template>
+
+    <template id="taskTemplate">
+      <li class="task">
+        <label>
+          <input type="checkbox" />
+          <span class="box"></span>
+          <input class="task-title" />
+        </label>
+        <button class="delete task-delete" type="button">x</button>
+      </li>
+    </template>
+
+    <template id="rowTemplate">
+      <article class="info-row">
+        <input class="row-title" />
+        <input class="row-number" inputmode="decimal" />
+        <button class="delete row-delete" type="button">x</button>
+      </article>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
